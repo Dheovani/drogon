@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\build\CMakeFiles\be5f1d95d4118bdbbba6ade8445b96c7\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{457D62C2-E1B2-368D-982D-7D7345248444}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
