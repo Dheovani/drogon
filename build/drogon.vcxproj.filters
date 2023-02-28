@@ -7,6 +7,9 @@
     <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\controllers\ControllerTest.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\models\DrogonTest.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\CMakeLists.txt" />

@@ -335,6 +335,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\main.cc" />
     <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\controllers\ControllerTest.cc" />
+    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\models\DrogonTest.cc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\build\ZERO_CHECK.vcxproj">
