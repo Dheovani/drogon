@@ -4,6 +4,12 @@
     <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\service\AddressService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\service\ProfileService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\controllers\demo_v1_User.cc">
       <Filter>Source Files</Filter>
     </ClCompile>

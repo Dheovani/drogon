@@ -11,17 +11,17 @@ namespace service
 class ProfileService
 {
 	private:
-		orm::Mapper<Profile> profileMapper{ app().getDbClient() };
+		orm::Mapper<Profile> mapper{ app().getDbClient() };
 
 	public:
 		ProfileService() = default;
 
-		Json::Value get(const long id);
+		Json::Value get(const __int64 id);
 
-		Json::Value createProfile(const Profile& profile);
+		Json::Value createProfile(Profile &profile);
 
-		void deleteProfile(const long id);
+		void deleteProfile(const __int64 id);
 
-		bool updateProfile(const Profile& profile, long id);
+		bool updateProfile(const Profile &profile, __int64 id);
 };
 }

@@ -11,7 +11,7 @@ void User::signUp(
     const std::string passwd,
     const std::string email,
     const std::string fullName,
-    const std::string fone = NULL
+    const std::string fone
 ) {
     Json::Value data;
 
@@ -20,7 +20,7 @@ void User::signUp(
         accountData["userName"] = userName;
         accountData["passwd"] = passwd;
         Account account(accountData);
-        long accountId = accountService.createAccount(account);
+        __int64 accountId = accountService.createAccount(account);
 
         Json::Value profileData;
         profileData["fullName"] = fullName;

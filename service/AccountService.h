@@ -16,14 +16,14 @@ class AccountService
 	public:
 		AccountService() = default;
 
-		Json::Value get(const long id);
+		Json::Value get(const __int64 id);
 
-		long createAccount(Account &account);
+		__int64 createAccount(Account &account);
 
-		void deleteAccount(const long id);
+		void deleteAccount(const __int64 id);
 
-		bool updateUserName(const long id, const std::string newUserName);
+		bool updateUserName(const __int64 id, const std::string newUserName);
 
-		bool changePasswd(const long id, const std::string newPasswd);
+		bool changePasswd(const __int64 id, const std::string newPasswd);
 };
 }

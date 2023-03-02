@@ -11,17 +11,17 @@ namespace service
 class AddressService
 {
 	private:
-		orm::Mapper<Address> addressMapper{ app().getDbClient() };
+		orm::Mapper<Address> mapper{ app().getDbClient() };
 
 	public:
 		AddressService() = default;
 
-		Json::Value get(const long id);
+		Json::Value get(const __int64 id);
 
-		long addAddress(const Address& address);
+		__int64 addAddress(Address &address);
 
-		bool changeAddress(const long id, const Address& address);
+		bool changeAddress(const __int64 id, const Address &address);
 
-		void deleteAddress(const long id);
+		void deleteAddress(const __int64 id);
 };
 }

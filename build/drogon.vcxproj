@@ -337,6 +337,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\service\AccountService.h" />
     <ClInclude Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\service\AddressService.h" />
     <ClInclude Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\service\ProfileService.h" />
+    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\service\AddressService.cpp" />
+    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\service\ProfileService.cpp" />
     <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\controllers\demo_v1_User.cc" />
     <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\models\Account.cc" />
     <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\models\Address.cc" />
