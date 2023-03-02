@@ -4,17 +4,40 @@
     <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\controllers\ControllerTest.cc">
+    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\controllers\demo_v1_User.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\models\DrogonTest.cc">
+    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\models\Account.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\models\Address.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\models\Profile.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\service\AccountService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\service\AccountService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\service\AddressService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\service\ProfileService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Dheovani\Documents\Codes\_c++\_drogon\drogon\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{A32C95D2-CB32-3929-9E42-B4DEB7057BAE}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{45A144E3-9FDA-38F6-8D6D-F3D3C69F3E52}</UniqueIdentifier>
     </Filter>
