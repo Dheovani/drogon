@@ -6,6 +6,6 @@
 <div style="display: inline_block;">
   <ul>
     <li><a href="https://github.com/drogonframework/drogon">Github</a></li>
-    <li><a href="https://drogon.org/">Documentação</a></li>
+    <li><a href="https://github.com/drogonframework/drogon/wiki/">Documentação</a></li>
   </ul>
 </div>
