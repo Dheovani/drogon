@@ -5,6 +5,10 @@
 # Prerequisites
 *.d
 
+### User ###
+# Database connection File
+dbconf.json
+
 # Object files
 *.o
 *.ko
