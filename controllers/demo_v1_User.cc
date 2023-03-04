@@ -5,12 +5,12 @@ using namespace demo::v1;
 using namespace drogon_model::postgres;
 
 void User::signUp(
-    const HttpRequestPtr &req,
+    const HttpRequestPtr& req,
     std::function<void(const HttpResponsePtr&)>&& callback,
-    std::string userName,
-    std::string passwd,
+    const std::string& userName,
+    const std::string& passwd,
+    const std::string& fullName,
     std::string email,
-    std::string fullName,
     std::string fone
 ) {
     Json::Value data;
@@ -50,15 +50,15 @@ void User::signUp(
 void User::login(
     const HttpRequestPtr& req,
     std::function<void(const HttpResponsePtr&)>&& callback,
-    const std::string userName,
-    const std::string passwd
+    const std::string& userName,
+    const std::string& passwd
 ) {}
 
 void User::getUserInfo(
     const HttpRequestPtr& req,
     std::function<void(const HttpResponsePtr&)>&& callback,
-    __int64 id,
-    const std::string token
+    const __int64& id,
+    const std::string& token
 ) {
     Json::Value response;
     response["object"] = NULL;
@@ -84,8 +84,8 @@ void User::getUserInfo(
 void User::addAddress(
     const HttpRequestPtr& req,
     std::function<void(const HttpResponsePtr&)>&& callback,
-    std::string country,
-    std::string city,
-    std::string zipCode,
-    const __int64 profile
+    const __int64& profile,
+    const std::string& country,
+    const std::string& city,
+    const std::string& zipCode
 ) {}

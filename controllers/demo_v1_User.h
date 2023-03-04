@@ -4,6 +4,7 @@
 #include "service/AccountService.h"
 #include "service/AddressService.h"
 #include "service/ProfileService.h"
+#include <sstream>
 
 using namespace drogon;
 using namespace service;
@@ -12,9 +13,19 @@ namespace demo
 {
 namespace v1
 {
-inline std::string generateToken() {
-	// TODO: Implementar algoritmo de geração de hash
-	return "1";
+inline std::string generateToken(std::string hashMsg = "Token generation message") {
+	const unsigned int magicNumber = rand() * rand();
+	unsigned int hash;
+
+	for (int i = 0; i < hashMsg.length(); i ++) {
+		hash = (hash ^ hashMsg[i]) * magicNumber;
+	}
+
+	std::stringstream hexStream;
+	hexStream << std::hex << std::uppercase << hash;
+
+	std::cout << hexStream.str() << std::endl;
+	return hexStream.str();
 }
 
 class User : public HttpController<User>
@@ -36,36 +47,36 @@ class User : public HttpController<User>
 		METHOD_LIST_END
 
 		void signUp(
-			const HttpRequestPtr &req,
+			const HttpRequestPtr& req,
 			std::function<void(const HttpResponsePtr&)>&& callback,
-			std::string userName,
-			std::string passwd,
-			std::string email,
-			std::string fullName,
-			std::string fone
+			const std::string& userName,
+			const std::string& passwd,
+			const std::string& fullName,
+			std::string email = NULL,
+			std::string fone = NULL
 		);
 
 		void login(
 			const HttpRequestPtr &req,
 			std::function<void(const HttpResponsePtr&)>&& callback,
-			const std::string userName,
-			const std::string passwd
+			const std::string &userName,
+			const std::string &passwd
 		);
 
 		void getUserInfo(
-			const HttpRequestPtr &req,
+			const HttpRequestPtr& req,
 			std::function<void(const HttpResponsePtr&)>&& callback,
-			__int64 id,
-			const std::string token
+			const __int64& id,
+			const std::string& token
 		);
 
 		void addAddress(
 			const HttpRequestPtr &req,
 			std::function<void(const HttpResponsePtr&)>&& callback,
-			std::string country,
-			std::string city,
-			std::string zipCode,
-			const __int64 profile
+			const __int64& profile,
+			const std::string& country,
+			const std::string& city,
+			const std::string& zipCode
 		);
 };
 }
