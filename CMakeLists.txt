@@ -19,7 +19,7 @@ endif ()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(${PROJECT_NAME} main.cc "service/AccountService.h"  "service/AddressService.h" "service/ProfileService.h" "service/AddressService.cpp" "service/ProfileService.cpp")
+add_executable(${PROJECT_NAME} main.cc "service/AccountService.h"  "service/AddressService.h" "service/ProfileService.h" "service/AddressService.cpp" "service/ProfileService.cpp"   )
 
 # ##############################################################################
 # If you include the drogon source code locally in your project, use this method

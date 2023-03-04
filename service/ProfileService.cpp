@@ -7,13 +7,9 @@ Json::Value ProfileService::get(const __int64 id) {
 	return mapper.findByPrimaryKey(id).toJson();
 }
 
-Json::Value ProfileService::createProfile(Profile& profile) {
-	const __int64 id = *profile.getId().get();
-
-	if (ProfileService::get(id)) return 0;
-
+Json::Value ProfileService::createProfile(Profile profile) {
 	mapper.insert(profile);
-	return id;
+	return profile.toJson();
 }
 
 void ProfileService::deleteProfile(const __int64 id) {

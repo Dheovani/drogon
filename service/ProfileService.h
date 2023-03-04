@@ -18,7 +18,7 @@ class ProfileService
 
 		Json::Value get(const __int64 id);
 
-		Json::Value createProfile(Profile &profile);
+		Json::Value createProfile(Profile profile);
 
 		void deleteProfile(const __int64 id);
 

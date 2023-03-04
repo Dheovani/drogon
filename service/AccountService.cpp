@@ -7,13 +7,28 @@ Json::Value AccountService::get(const __int64 id) {
 	return mapper.findByPrimaryKey(id).toJson();
 }
 
-__int64 AccountService::createAccount(Account &account) {
-	const __int64 id = *account.getId().get();
+Json::Value AccountService::getByUsername(const std::string username) {
+	orm::Criteria criteria("username", orm::CompareOperator::EQ, username);
+	return mapper.findOne(criteria).toJson();
+}
 
-	if (AccountService::get(id)) return 0;
-			
-	mapper.insert(account);
-	return id;
+Json::Value AccountService::createAccount(Account account) {
+	Json::Value response;
+
+	try {
+		mapper.insert(account);
+
+		response["success"] = TRUE;
+		response["message"] = "Registro inserido com sucesso";
+		response["object"] = account.toJson();
+	}
+	catch (std::exception &ex) {
+		response["success"] = FALSE;
+		response["message"] = ex.what();
+		response["object"] = NULL;
+	}
+
+	return response;
 }
 
 void AccountService::deleteAccount(const __int64 id) {

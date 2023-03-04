@@ -14,11 +14,11 @@ class AccountService
 		orm::Mapper<Account> mapper{ app().getDbClient() };
 
 	public:
-		AccountService() = default;
-
 		Json::Value get(const __int64 id);
 
-		__int64 createAccount(Account &account);
+		Json::Value getByUsername(const std::string username);
+
+		Json::Value createAccount(Account account);
 
 		void deleteAccount(const __int64 id);
 
