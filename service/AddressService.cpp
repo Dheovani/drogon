@@ -8,6 +8,7 @@ Json::Value AddressService::get(const __int64& id) {
 		return mapper.findByPrimaryKey(id).toJson();
 	}
 	catch (const std::exception& ex) {
+		std::cout << ex.what() << std::endl;
 		return NULL;
 	}
 }

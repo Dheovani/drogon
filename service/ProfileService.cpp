@@ -8,6 +8,7 @@ Json::Value ProfileService::get(const __int64& id) {
 		return mapper.findByPrimaryKey(id).toJson();
 	}
 	catch (const std::exception& ex) {
+		std::cout << ex.what() << std::endl;
 		return NULL;
 	}
 }
@@ -18,6 +19,7 @@ Json::Value ProfileService::getByAccount(const __int64& id) {
 		return mapper.findOne(criteria).toJson();
 	}
 	catch (const std::exception& ex) {
+		std::cout << ex.what() << std::endl;
 		return NULL;
 	}
 }
