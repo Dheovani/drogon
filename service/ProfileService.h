@@ -16,12 +16,14 @@ class ProfileService
 	public:
 		ProfileService() = default;
 
-		Json::Value get(const __int64 id);
+		Json::Value get(const __int64& id);
 
-		Json::Value createProfile(Profile profile);
+		Json::Value getByAccount(const __int64& id);
 
-		void deleteProfile(const __int64 id);
+		Json::Value createProfile(Profile& profile);
 
-		bool updateProfile(const Profile &profile, __int64 id);
+		void deleteProfile(const __int64& id);
+
+		bool updateProfile(Profile& profile, const __int64& id);
 };
 }

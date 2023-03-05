@@ -4,18 +4,34 @@ using namespace drogon;
 using namespace service;
 
 Json::Value AccountService::get(const __int64 id) {
-	return mapper.findByPrimaryKey(id).toJson();
+	try {
+		return mapper.findByPrimaryKey(id).toJson();
+	}
+	catch (const std::exception& ex) {
+		return NULL;
+	}
 }
 
 Json::Value AccountService::getByUsername(const std::string username) {
-	orm::Criteria criteria("username", orm::CompareOperator::EQ, username);
-	return mapper.findOne(criteria).toJson();
+	try {
+		orm::Criteria criteria("username", orm::CompareOperator::EQ, username);
+		return mapper.findOne(criteria).toJson();
+	}
+	catch (const std::exception& ex) {
+		return NULL;
+	}
 }
 
 Json::Value AccountService::createAccount(Account account) {
 	Json::Value response;
 
 	try {
+		Json::Value object = this->getByUsername(*account.getUsername().get());
+
+		if (object != NULL) {
+			throw std::invalid_argument("Nome de usuario invalido");
+		}
+
 		mapper.insert(account);
 
 		response["success"] = TRUE;
@@ -25,7 +41,6 @@ Json::Value AccountService::createAccount(Account account) {
 	catch (std::exception &ex) {
 		response["success"] = FALSE;
 		response["message"] = ex.what();
-		response["object"] = NULL;
 	}
 
 	return response;

@@ -3,8 +3,13 @@
 using namespace drogon;
 using namespace service;
 
-Json::Value AddressService::get(const __int64 id) {
-	return mapper.findByPrimaryKey(id).toJson();
+Json::Value AddressService::get(const __int64& id) {
+	try {
+		return mapper.findByPrimaryKey(id).toJson();
+	}
+	catch (const std::exception& ex) {
+		return NULL;
+	}
 }
 
 __int64 AddressService::addAddress(Address& address) {
@@ -16,11 +21,11 @@ __int64 AddressService::addAddress(Address& address) {
 	return id;
 }
 
-void AddressService::deleteAddress(const __int64 id) {
+void AddressService::deleteAddress(const __int64& id) {
 	mapper.deleteByPrimaryKey(id);
 }
 
-bool AddressService::changeAddress(const __int64 id, const Address &address) {
+bool AddressService::changeAddress(const __int64& id, const Address &address) {
 	if (!AddressService::get(id)) return FALSE;
 
 	mapper.update(address);

@@ -16,12 +16,12 @@ class AddressService
 	public:
 		AddressService() = default;
 
-		Json::Value get(const __int64 id);
+		Json::Value get(const __int64& id);
 
 		__int64 addAddress(Address &address);
 
-		bool changeAddress(const __int64 id, const Address &address);
+		bool changeAddress(const __int64& id, const Address &address);
 
-		void deleteAddress(const __int64 id);
+		void deleteAddress(const __int64& id);
 };
 }

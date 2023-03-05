@@ -2,6 +2,7 @@
 #include <fstream>
 
 int main() {
+    // Arquivo de configuração deve ficar no diretório out/build/x64-RelWithDebInfo
     std::ifstream dbconf("dbconf.json");
     Json::Value connData;
     dbconf >> connData;

@@ -24,7 +24,6 @@ inline std::string generateToken(std::string hashMsg = "Token generation message
 	std::stringstream hexStream;
 	hexStream << std::hex << std::uppercase << hash;
 
-	std::cout << hexStream.str() << std::endl;
 	return hexStream.str();
 }
 
@@ -40,10 +39,11 @@ class User : public HttpController<User>
 
 	public:
 		METHOD_LIST_BEGIN
-		METHOD_ADD(User::signUp, "/signup?username={1}&passwd={2}&email={3}&fullName={4}&fone={5}", Get, Post);
-		METHOD_ADD(User::login, "/login?username={1}&passwd={2}", Post);
+		METHOD_ADD(User::signUp, "/signup?username={1}&passwd={2}&fullName={3}&email={4}&fone={5}", Get, Post);
+		METHOD_ADD(User::login, "/login?username={1}&passwd={2}", Get, Post);
 		METHOD_ADD(User::getUserInfo, "/{1}/info?token={2}", Get);
-		METHOD_ADD(User::addAddress, "/address?country={1}&city={2}&zipcode={3}", Post);
+		METHOD_ADD(User::addAddress, "/address?country={1}&city={2}&zipcode={3}", Get, Post);
+		METHOD_ADD(User::deleteProfile, "/delete?id={1}&username={2}", Get, Post);
 		METHOD_LIST_END
 
 		void signUp(
@@ -52,7 +52,7 @@ class User : public HttpController<User>
 			const std::string& userName,
 			const std::string& passwd,
 			const std::string& fullName,
-			std::string email = NULL,
+			const std::string& email,
 			std::string fone = NULL
 		);
 
@@ -77,6 +77,13 @@ class User : public HttpController<User>
 			const std::string& country,
 			const std::string& city,
 			const std::string& zipCode
+		);
+
+		void deleteProfile(
+			const HttpRequestPtr& req,
+			std::function<void(const HttpResponsePtr&)>&& callback,
+			__int64 id = NULL,
+			std::string userName = ""
 		);
 };
 }
