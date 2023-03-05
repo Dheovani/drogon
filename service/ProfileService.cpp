@@ -33,8 +33,14 @@ void ProfileService::deleteProfile(const __int64& id) {
 	mapper.deleteByPrimaryKey(id);
 }
 
-bool ProfileService::updateProfile(Profile& profile, const __int64& id) {
-	if (!ProfileService::get(id)) return FALSE;
+bool ProfileService::updateProfile(Profile& profile, __int64 addressId) {
+	if (!ProfileService::get(*profile.getId().get())) {
+		return FALSE;
+	}
+
+	if (addressId != NULL) {
+		profile.setAddressId(addressId);
+	}
 
 	mapper.update(profile);
 	return TRUE;

@@ -199,12 +199,12 @@ class Account
         sql +="default,";
         if(dirtyFlag_[1])
         {
-            n = sprintf_s(placeholderStr,"$%d,",placeholder++);
+            n = sprintf(placeholderStr,"$%d,",placeholder++);
             sql.append(placeholderStr, n);
         }
         if(dirtyFlag_[2])
         {
-            n = sprintf_s(placeholderStr,"$%d,",placeholder++);
+            n = sprintf(placeholderStr,"$%d,",placeholder++);
             sql.append(placeholderStr, n);
         }
         if(parametersCount > 0)

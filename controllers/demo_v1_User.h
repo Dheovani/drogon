@@ -42,7 +42,7 @@ namespace demo
 				METHOD_ADD(User::signUp, "/signup?username={1}&passwd={2}&fullName={3}&email={4}&fone={5}", Get, Post);
 				METHOD_ADD(User::login, "/login?username={1}&passwd={2}", Get, Post);
 				METHOD_ADD(User::getUserInfo, "/{1}/info?token={2}", Get);
-				METHOD_ADD(User::addAddress, "/address?country={1}&city={2}&zipcode={3}", Get, Post);
+				METHOD_ADD(User::addAddress, "/address?profileId={1}&country={2}&city={3}&zipcode={4}", Get, Post);
 				METHOD_ADD(User::deleteProfile, "/delete?id={1}&username={2}", Get, Post);
 				METHOD_LIST_END
 
@@ -73,7 +73,7 @@ namespace demo
 				void addAddress(
 					const HttpRequestPtr &req,
 					std::function<void(const HttpResponsePtr&)>&& callback,
-					const __int64& profile,
+					const __int64& profileId,
 					const std::string& country,
 					const std::string& city,
 					const std::string& zipCode

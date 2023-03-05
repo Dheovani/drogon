@@ -25,6 +25,6 @@ namespace service
 
 			void deleteProfile(const __int64& id);
 
-			bool updateProfile(Profile& profile, const __int64& id);
+			bool updateProfile(Profile& profile, __int64 addressId = NULL);
 	};
 }

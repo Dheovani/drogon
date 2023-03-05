@@ -514,6 +514,10 @@ const std::vector<std::string> Profile::updateColumns() const
     {
         ret.push_back(getColumnName(3));
     }
+    if(dirtyFlag_[5])
+    {
+        ret.push_back(getColumnName(5));
+    }
     return ret;
 }
 
@@ -546,6 +550,17 @@ void Profile::updateArgs(drogon::orm::internal::SqlBinder &binder) const
         if(getFone())
         {
             binder << getValueOfFone();
+        }
+        else
+        {
+            binder << nullptr;
+        }
+    }
+    if (dirtyFlag_[5])
+    {
+        if (getFone())
+        {
+            binder << getValueOfAddressId();
         }
         else
         {

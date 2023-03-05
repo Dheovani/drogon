@@ -14,12 +14,8 @@ Json::Value AddressService::get(const __int64& id) {
 }
 
 __int64 AddressService::addAddress(Address& address) {
-	const __int64 id = *address.getId().get();
-
-	if (AddressService::get(id)) return 0;
-
 	mapper.insert(address);
-	return id;
+	return *address.getId().get();
 }
 
 void AddressService::deleteAddress(const __int64& id) {
