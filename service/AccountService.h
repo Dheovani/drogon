@@ -4,7 +4,6 @@
 #include "Database.h"
 #include "Account.h"
 
-using namespace drogon;
 using namespace drogon_model::postgres;
 
 namespace service
@@ -12,9 +11,11 @@ namespace service
 	class AccountService
 	{
 		private:
-			orm::Mapper<Account> mapper{ Database::getDbClient() };
+			drogon::orm::Mapper<Account> mapper{ Database::getDbClient() };
 
 		public:
+			AccountService() = default;
+
 			Json::Value get(const __int64 id);
 
 			Json::Value getByUsername(const std::string username);

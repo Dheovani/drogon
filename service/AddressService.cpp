@@ -1,6 +1,5 @@
 #include "AddressService.h"
 
-using namespace drogon;
 using namespace service;
 
 Json::Value AddressService::get(const __int64& id) {

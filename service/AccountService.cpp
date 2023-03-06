@@ -1,7 +1,8 @@
 #include "AccountService.h"
 
-using namespace drogon;
 using namespace service;
+using drogon::orm::Criteria;
+using drogon::orm::CompareOperator;
 
 Json::Value AccountService::get(const __int64 id) {
 	try {
@@ -15,7 +16,7 @@ Json::Value AccountService::get(const __int64 id) {
 
 Json::Value AccountService::getByUsername(const std::string username) {
 	try {
-		orm::Criteria criteria("username", orm::CompareOperator::EQ, username);
+		Criteria criteria("username", CompareOperator::EQ, username);
 		return mapper.findOne(criteria).toJson();
 	}
 	catch (const std::exception& ex) {

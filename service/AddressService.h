@@ -4,7 +4,6 @@
 #include "Database.h"
 #include "Address.h"
 
-using namespace drogon;
 using namespace drogon_model::postgres;
 
 namespace service
@@ -12,7 +11,7 @@ namespace service
 	class AddressService
 	{
 		private:
-			orm::Mapper<Address> mapper{ Database::getDbClient() };
+			drogon::orm::Mapper<Address> mapper{ Database::getDbClient() };
 
 		public:
 			AddressService() = default;

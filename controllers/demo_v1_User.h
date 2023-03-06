@@ -6,8 +6,11 @@
 #include "service/ProfileService.h"
 #include <sstream>
 
-using namespace drogon;
-using namespace service;
+using drogon::HttpRequestPtr;
+using drogon::HttpResponsePtr;
+using drogon::Get;
+using drogon::Post;
+using drogon::Delete;
 
 namespace demo
 {
@@ -27,23 +30,23 @@ namespace demo
 			return hexStream.str();
 		}
 
-		class User : public HttpController<User>
+		class User : public drogon::HttpController<User>
 		{
 			private:
-				AccountService accountService;
-				AddressService addressService;
-				ProfileService profileService;
+				service::AccountService accountService;
+				service::AddressService addressService;
+				service::ProfileService profileService;
 
 				// Token retornado após o login
 				std::string mToken = generateToken();
 
 			public:
 				METHOD_LIST_BEGIN
-				METHOD_ADD(User::signUp, "/signup?username={1}&passwd={2}&fullName={3}&email={4}&fone={5}", Get, Post);
+				METHOD_ADD(User::signUp, "/signup?username={1}&passwd={2}&fullName={3}&email={4}&fone={5}", Post);
 				METHOD_ADD(User::login, "/login?username={1}&passwd={2}", Get, Post);
 				METHOD_ADD(User::getUserInfo, "/{1}/info?token={2}", Get);
-				METHOD_ADD(User::addAddress, "/address?profileId={1}&country={2}&city={3}&zipcode={4}", Get, Post);
-				METHOD_ADD(User::deleteProfile, "/delete?id={1}&username={2}", Get, Post);
+				METHOD_ADD(User::addAddress, "/address?profileId={1}&country={2}&city={3}&zipcode={4}", Post);
+				METHOD_ADD(User::deleteProfile, "/delete?id={1}&username={2}", Delete);
 				METHOD_LIST_END
 
 				void signUp(

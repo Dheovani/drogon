@@ -4,7 +4,6 @@
 #include "Database.h"
 #include "Profile.h"
 
-using namespace drogon;
 using namespace drogon_model::postgres;
 
 namespace service
@@ -12,7 +11,7 @@ namespace service
 	class ProfileService
 	{
 		private:
-			orm::Mapper<Profile> mapper{ Database::getDbClient() };
+			drogon::orm::Mapper<Profile> mapper{ Database::getDbClient() };
 
 		public:
 			ProfileService() = default;

@@ -1,8 +1,9 @@
 #include "demo_v1_User.h"
 
-using namespace drogon;
 using namespace demo::v1;
-using namespace drogon_model::postgres;
+using drogon::HttpResponse;
+using drogon::HttpStatusCode;
+using drogon::ContentType;
 
 void User::signUp(
     const HttpRequestPtr& req,
@@ -45,8 +46,8 @@ void User::signUp(
     }
 
     auto resp = HttpResponse::newHttpJsonResponse(response);
-    resp->setStatusCode(k200OK);
-    resp->setContentTypeCode(CT_APPLICATION_JSON);
+    resp->setStatusCode(HttpStatusCode::k200OK);
+    resp->setContentTypeCode(ContentType::CT_APPLICATION_JSON);
 
     callback(resp);
 }
@@ -79,8 +80,8 @@ void User::login(
     }
 
     auto resp = HttpResponse::newHttpJsonResponse(response);
-    resp->setStatusCode(k200OK);
-    resp->setContentTypeCode(CT_APPLICATION_JSON);
+    resp->setStatusCode(HttpStatusCode::k200OK);
+    resp->setContentTypeCode(ContentType::CT_APPLICATION_JSON);
 
     callback(resp);
 }
@@ -114,8 +115,8 @@ void User::getUserInfo(
     }
 
     auto resp = HttpResponse::newHttpJsonResponse(response);
-    resp->setStatusCode(k200OK);
-    resp->setContentTypeCode(CT_APPLICATION_JSON);
+    resp->setStatusCode(HttpStatusCode::k200OK);
+    resp->setContentTypeCode(ContentType::CT_APPLICATION_JSON);
 
     callback(resp);
 }
@@ -152,8 +153,8 @@ void User::addAddress(
     }
 
     auto resp = HttpResponse::newHttpJsonResponse(response);
-    resp->setStatusCode(k200OK);
-    resp->setContentTypeCode(CT_APPLICATION_JSON);
+    resp->setStatusCode(HttpStatusCode::k200OK);
+    resp->setContentTypeCode(ContentType::CT_APPLICATION_JSON);
 
     callback(resp);
 }
@@ -192,8 +193,8 @@ void User::deleteProfile(
     }
 
     auto resp = HttpResponse::newHttpJsonResponse(response);
-    resp->setStatusCode(k200OK);
-    resp->setContentTypeCode(CT_APPLICATION_JSON);
+    resp->setStatusCode(HttpStatusCode::k200OK);
+    resp->setContentTypeCode(ContentType::CT_APPLICATION_JSON);
 
     callback(resp);
 }
